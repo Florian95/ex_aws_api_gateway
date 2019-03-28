@@ -6,7 +6,9 @@ defmodule ExAws.ApiGateway.Parser do
   @structs %{
     get_apis_keys: %ExAws.ApiGateway.ApiKey{},
     get_rest_apis: %ExAws.ApiGateway.RestApi{},
-    create_apis_keys: %ExAws.ApiGateway.ApiKey{}
+    create_apis_keys: %ExAws.ApiGateway.ApiKey{},
+    get_usage_plans: %ExAws.ApiGateway.UsagePlan{},
+    associate_usage_plan: %ExAws.ApiGateway.UsagePlanKey{}
   }
 
   def parse({:ok, %{body: body}}, method) do
@@ -15,6 +17,12 @@ defmodule ExAws.ApiGateway.Parser do
      body
      |> Poison.decode!()
      |> decode(method)}
+  end
+
+  def parse({:error, {:http_error, error_code, %{body: body}}}, _method) do
+    {:error,
+     body
+     |> Poison.decode!()}
   end
 
   defp decode(%{"_embedded" => item}, method) do
@@ -29,7 +37,7 @@ defmodule ExAws.ApiGateway.Parser do
     to_struct(item, method)
   end
 
-  defp decode(%{"id" => id} = map, method) do
+  defp decode(%{"id" => _} = map, method) do
     to_struct(map, method)
   end
 

@@ -46,6 +46,7 @@ defmodule ExAws.ApiGateway.Mixfile do
       {:hackney, ">= 0.0.0", only: [:dev, :test]},
       {:poison, ">= 0.0.0", only: [:dev, :test]},
       {:ex_doc, ">= 0.0.0", only: [:dev]},
+      {:mix_test_watch, "~> 0.8", only: :dev, runtime: false},
       {:recase, "~> 0.4"},
       ex_aws()
     ]

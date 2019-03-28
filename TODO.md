@@ -7,7 +7,7 @@ Based on [Amazon API Gateway REST API Reference](https://docs.aws.amazon.com/api
 - [ ] apigateway:client-certificates
 - [ ] apigateway:domain-names
 - [x] apigateway:rest-apis
-- [ ] apigateway:usage-plans
+- [x] apigateway:usage-plans
 - [ ] apigateway:vpc-links
 - [ ] apikey:by-key
 - [x] apikey:create
@@ -115,7 +115,7 @@ Based on [Amazon API Gateway REST API Reference](https://docs.aws.amazon.com/api
 - [ ] usageplan:update
 - [ ] usageplan:usageplankeys
 - [ ] usageplankey:by-id
-- [ ] usageplankey:create
+- [x] usageplankey:create
 - [ ] usageplankey:delete
 - [ ] vpclink:by-id
 - [ ] vpclink:create
