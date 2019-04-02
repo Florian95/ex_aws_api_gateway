@@ -3,8 +3,9 @@ defmodule ExAws.ApiGatewayTest do
 
   @region "eu-west-1"
   @usage_plan_id "0v2i30"
-  @api_key "xtk0sllej6"
+  @api_key "sod6pculb0"
 
+  # @tag :skip
   test "#create_apis_keys" do
     assert {:ok, %ExAws.ApiGateway.ApiKey{id: _, value: _}} =
              ExAws.ApiGateway.create_apis_keys(%{
@@ -15,6 +16,7 @@ defmodule ExAws.ApiGatewayTest do
              |> ExAws.request(region: @region)
   end
 
+  # @tag :skip
   test "#associate_usage_plan" do
     assert {:ok, %ExAws.ApiGateway.UsagePlanKey{id: _}} =
              ExAws.ApiGateway.associate_usage_plan(%{
@@ -22,6 +24,12 @@ defmodule ExAws.ApiGatewayTest do
                keyType: "API_KEY",
                usageplanId: @usage_plan_id
              })
+             |> ExAws.request(region: @region)
+  end
+
+  test "#usage_by_api_key" do
+    assert {:ok, [{_id, [_ | _]} | _]} =
+             ExAws.ApiGateway.usage_by_api_key(%{usageplanId: @usage_plan_id, keyId: @api_key})
              |> ExAws.request(region: @region)
   end
 

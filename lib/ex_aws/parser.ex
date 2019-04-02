@@ -4,11 +4,10 @@ defmodule ExAws.ApiGateway.Parser do
   """
 
   @structs %{
-    get_apis_keys: %ExAws.ApiGateway.ApiKey{},
-    get_rest_apis: %ExAws.ApiGateway.RestApi{},
-    create_apis_keys: %ExAws.ApiGateway.ApiKey{},
-    get_usage_plans: %ExAws.ApiGateway.UsagePlan{},
-    associate_usage_plan: %ExAws.ApiGateway.UsagePlanKey{}
+    api_key: %ExAws.ApiGateway.ApiKey{},
+    rest_api: %ExAws.ApiGateway.RestApi{},
+    usage_plan: %ExAws.ApiGateway.UsagePlan{},
+    usage_plan_key: %ExAws.ApiGateway.UsagePlanKey{}
   }
 
   def parse({:ok, %{body: body}}, method) do
@@ -33,12 +32,20 @@ defmodule ExAws.ApiGateway.Parser do
     Enum.map(items, &to_struct(&1, method))
   end
 
+  defp decode(%{"values" => items}, method) do
+    Enum.map(items, &to_struct(&1, method))
+  end
+
   defp decode(%{"item" => item}, method) do
     to_struct(item, method)
   end
 
   defp decode(%{"id" => _} = map, method) do
     to_struct(map, method)
+  end
+
+  defp to_struct({_key, _values} = tuple, _method) do
+    tuple
   end
 
   defp to_struct(%{} = map, method) do

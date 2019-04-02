@@ -107,7 +107,7 @@ Based on [Amazon API Gateway REST API Reference](https://docs.aws.amazon.com/api
 - [ ] tags:get
 - [ ] tags:tag
 - [ ] tags:untag
-- [ ] usage:get
+- [x] usage:get
 - [ ] usage:update
 - [ ] usageplan:by-id
 - [ ] usageplan:create

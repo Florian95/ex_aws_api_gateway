@@ -31,19 +31,39 @@ defmodule ExAws.ApiGateway do
   @doc "Get all API keys"
   @spec get_apis_keys() :: ExAws.Operation.JSON.t()
   def get_apis_keys() do
-    request(:get, :get_apis_keys, "/apikeys?includeValues=true")
+    request(:get, :api_key, "/apikeys?includeValues=true")
   end
 
   @doc "Get all APIs"
   @spec get_rest_apis() :: ExAws.Operation.JSON.t()
   def get_rest_apis() do
-    request(:get, :get_rest_apis, "/restapis")
+    request(:get, :rest_api, "/restapis")
   end
 
   @doc "Get all usage plans"
   @spec get_usage_plans() :: ExAws.Operation.JSON.t()
   def get_usage_plans() do
-    request(:get, :get_usage_plans, "/usageplans")
+    request(:get, :usage_plan, "/usageplans")
+  end
+
+  @doc "Get usage for specific api key"
+  @type usage_by_api_key_opts :: [
+          {:usageplanId, binary}
+          | {:keyId, binary}
+          | {:startDate, binary}
+          | {:endDate, binary}
+          | {:limit, integer}
+        ]
+  @spec usage_by_api_key(params :: usage_by_api_key_opts) :: ExAws.Operation.JSON.t()
+  def usage_by_api_key(params) do
+    defaults = %{startDate: "2019-04-01", endDate: "2019-04-02"}
+    params = Map.merge(defaults, params)
+
+    request(
+      :get,
+      nil,
+      "/usageplans/#{params[:usageplanId]}/usage?" <> URI.encode_query(params)
+    )
   end
 
   @doc "Associate an existing API key to the specified usage plan"
@@ -54,7 +74,7 @@ defmodule ExAws.ApiGateway do
         ]
   @spec associate_usage_plan(data :: associate_usage_plan_opts) :: ExAws.Operation.JSON.t()
   def associate_usage_plan(data) do
-    request(:post, :associate_usage_plan, "/usageplans/#{data[:usageplanId]}/keys", data)
+    request(:post, :plan_key, "/usageplans/#{data[:usageplanId]}/keys", data)
   end
 
   @doc "Create a new api key"
@@ -66,7 +86,7 @@ defmodule ExAws.ApiGateway do
         ]
   @spec create_apis_keys(data :: create_apis_keys_opts) :: ExAws.Operation.JSON.t()
   def create_apis_keys(data) do
-    request(:post, :create_apis_keys, "/apikeys", data)
+    request(:post, :api_key, "/apikeys", data)
   end
 
   defp request(http_method, action, path, data \\ %{}, params \\ []) do
