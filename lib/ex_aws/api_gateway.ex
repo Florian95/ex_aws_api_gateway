@@ -31,7 +31,7 @@ defmodule ExAws.ApiGateway do
   @doc "Get all API keys"
   @spec get_apis_keys() :: ExAws.Operation.JSON.t()
   def get_apis_keys() do
-    request(:get, :get_apis_keys, "/apikeys")
+    request(:get, :get_apis_keys, "/apikeys?includeValues=true")
   end
 
   @doc "Get all APIs"

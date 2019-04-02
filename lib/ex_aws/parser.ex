@@ -19,7 +19,7 @@ defmodule ExAws.ApiGateway.Parser do
      |> decode(method)}
   end
 
-  def parse({:error, {:http_error, error_code, %{body: body}}}, _method) do
+  def parse({:error, {:http_error, _error_code, %{body: body}}}, _method) do
     {:error,
      body
      |> Poison.decode!()}
