@@ -77,6 +77,12 @@ defmodule ExAws.ApiGateway do
     request(:post, :plan_key, "/usageplans/#{data[:usageplanId]}/keys", data)
   end
 
+  @doc "Associate an existing API key to the specified usage plan"
+  @spec disassociate_usage_plan(data :: associate_usage_plan_opts) :: ExAws.Operation.JSON.t()
+  def disassociate_usage_plan(data) do
+    request(:delete, :plan_key, "/usageplans/#{data[:usageplanId]}/keys/#{data[:keyId]}")
+  end
+
   @doc "Create a new api key"
   @type create_apis_keys_opts :: [
           {:name, binary}

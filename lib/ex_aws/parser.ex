@@ -12,10 +12,15 @@ defmodule ExAws.ApiGateway.Parser do
 
   def parse({:ok, %{body: body}}, method) do
     # TODO : Add Errors management
-    {:ok,
-     body
-     |> Poison.decode!()
-     |> decode(method)}
+
+    if !blank?(body) do
+      {:ok,
+       body
+       |> Poison.decode!()
+       |> decode(method)}
+    else
+      {:ok, nil}
+    end
   end
 
   def parse({:error, {:http_error, _error_code, %{body: body}}}, _method) do
@@ -59,4 +64,7 @@ defmodule ExAws.ApiGateway.Parser do
     end)
     |> (fn data -> struct(struct.__struct__, data) end).()
   end
+
+  defp blank?(str_or_nil),
+    do: "" == str_or_nil |> to_string() |> String.trim()
 end

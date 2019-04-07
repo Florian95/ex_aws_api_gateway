@@ -1,7 +1,7 @@
 defmodule ExAws.ApiGateway.Mixfile do
   use Mix.Project
 
-  @version "0.9.2"
+  @version "0.9.3"
   @service "api_gateway"
   @url "https://github.com/florian95/ex_aws_#{@service}"
   @name __MODULE__ |> Module.split() |> Enum.take(2) |> Enum.join(".")

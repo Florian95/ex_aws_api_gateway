@@ -116,7 +116,7 @@ Based on [Amazon API Gateway REST API Reference](https://docs.aws.amazon.com/api
 - [ ] usageplan:usageplankeys
 - [ ] usageplankey:by-id
 - [x] usageplankey:create
-- [ ] usageplankey:delete
+- [x] usageplankey:delete
 - [ ] vpclink:by-id
 - [ ] vpclink:create
 - [ ] vpclink:delete
