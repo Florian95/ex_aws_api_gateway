@@ -1,0 +1,143 @@
+{
+  "_links": {
+    "curies": [
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-usage-{rel}.html",
+        "name": "usage",
+        "templated": true
+      },
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-usageplan-{rel}.html",
+        "name": "usageplan",
+        "templated": true
+      },
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-usageplankey-{rel}.html",
+        "name": "usageplankey",
+        "templated": true
+      }
+    ],
+    "self": { "href": "/usageplans" },
+    "item": [
+      { "href": "/usageplans/0v2i30" },
+      { "href": "/usageplans/4qnu9g" },
+      { "href": "/usageplans/bfk115" },
+      { "href": "/usageplans/ivghd7" },
+      { "href": "/usageplans/pkd32j" }
+    ],
+    "usageplan:by-id": {
+      "href": "/usageplans/{usageplanId}",
+      "templated": true
+    },
+    "usageplan:create": { "href": "/usageplans" }
+  },
+  "_embedded": {
+    "item": [
+      {
+        "_links": {
+          "self": { "href": "/usageplans/0v2i30" },
+          "usage:get": {
+            "href": "/usageplans/0v2i30/usage?startDate=2019-03-09&endDate=2019-04-08{&keyId,position,limit}",
+            "templated": true
+          },
+          "usageplan:delete": { "href": "/usageplans/0v2i30" },
+          "usageplan:update": { "href": "/usageplans/0v2i30" },
+          "usageplan:usageplankeys": { "href": "/usageplans/0v2i30/keys" },
+          "usageplankey:create": { "href": "/usageplans/0v2i30/keys" }
+        },
+        "apiStages": {
+          "stage": "dev",
+          "throttle": null,
+          "apiId": "pywgcctwn2"
+        },
+        "id": "0v2i30",
+        "name": "Basic",
+        "quota": { "period": "MONTH", "offset": 0, "limit": 1000 }
+      },
+      {
+        "_links": {
+          "self": { "href": "/usageplans/4qnu9g" },
+          "usage:get": {
+            "href": "/usageplans/4qnu9g/usage?startDate=2019-03-09&endDate=2019-04-08{&keyId,position,limit}",
+            "templated": true
+          },
+          "usageplan:delete": { "href": "/usageplans/4qnu9g" },
+          "usageplan:update": { "href": "/usageplans/4qnu9g" },
+          "usageplan:usageplankeys": { "href": "/usageplans/4qnu9g/keys" },
+          "usageplankey:create": { "href": "/usageplans/4qnu9g/keys" }
+        },
+        "apiStages": {
+          "stage": "dev",
+          "throttle": null,
+          "apiId": "pywgcctwn2"
+        },
+        "id": "4qnu9g",
+        "name": "Unlimited"
+      },
+      {
+        "_links": {
+          "self": { "href": "/usageplans/bfk115" },
+          "usage:get": {
+            "href": "/usageplans/bfk115/usage?startDate=2019-03-09&endDate=2019-04-08{&keyId,position,limit}",
+            "templated": true
+          },
+          "usageplan:delete": { "href": "/usageplans/bfk115" },
+          "usageplan:update": { "href": "/usageplans/bfk115" },
+          "usageplan:usageplankeys": { "href": "/usageplans/bfk115/keys" },
+          "usageplankey:create": { "href": "/usageplans/bfk115/keys" }
+        },
+        "apiStages": {
+          "stage": "dev",
+          "throttle": null,
+          "apiId": "pywgcctwn2"
+        },
+        "id": "bfk115",
+        "name": "Free",
+        "quota": { "period": "MONTH", "offset": 0, "limit": 10 },
+        "throttle": { "rateLimit": 10.0, "burstLimit": 100 }
+      },
+      {
+        "_links": {
+          "self": { "href": "/usageplans/ivghd7" },
+          "usage:get": {
+            "href": "/usageplans/ivghd7/usage?startDate=2019-03-09&endDate=2019-04-08{&keyId,position,limit}",
+            "templated": true
+          },
+          "usageplan:delete": { "href": "/usageplans/ivghd7" },
+          "usageplan:update": { "href": "/usageplans/ivghd7" },
+          "usageplan:usageplankeys": { "href": "/usageplans/ivghd7/keys" },
+          "usageplankey:create": { "href": "/usageplans/ivghd7/keys" }
+        },
+        "apiStages": {
+          "stage": "dev",
+          "throttle": null,
+          "apiId": "pywgcctwn2"
+        },
+        "description": "Usage plan for cs dev stage",
+        "id": "ivghd7",
+        "name": "caaaaaev"
+      },
+      {
+        "_links": {
+          "self": { "href": "/usageplans/pkd32j" },
+          "usage:get": {
+            "href": "/usageplans/pkd32j/usage?startDate=2019-03-09&endDate=2019-04-08{&keyId,position,limit}",
+            "templated": true
+          },
+          "usageplan:delete": { "href": "/usageplans/pkd32j" },
+          "usageplan:update": { "href": "/usageplans/pkd32j" },
+          "usageplan:usageplankeys": { "href": "/usageplans/pkd32j/keys" },
+          "usageplankey:create": { "href": "/usageplans/pkd32j/keys" }
+        },
+        "apiStages": {
+          "stage": "dev",
+          "throttle": null,
+          "apiId": "pywgcctwn2"
+        },
+        "id": "pkd32j",
+        "name": "Pro",
+        "quota": { "period": "MONTH", "offset": 0, "limit": 100000 }
+      }
+    ]
+  }
+}

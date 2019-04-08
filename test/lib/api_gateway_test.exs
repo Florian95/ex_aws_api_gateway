@@ -1,6 +1,11 @@
 defmodule ExAws.ApiGatewayTest do
   use ExUnit.Case, async: true
 
+  setup do
+    bypass = Bypass.open(port: 1234)
+    {:ok, bypass: bypass}
+  end
+
   @region "eu-west-1"
   @usage_plan_id "0v2i30"
   @api_key "m6jag7ci1m"
@@ -46,30 +51,42 @@ defmodule ExAws.ApiGatewayTest do
              |> ExAws.request(region: @region)
   end
 
-  @tag :skip
-  test "#get_apis_keys" do
+  test "#get_apis_keys", %{bypass: bypass} do
+    Bypass.expect_once(bypass, "GET", "/apikeys", fn conn ->
+      Plug.Conn.resp(conn, 200, File.read!("test/fixtures/get_apis_keys.json"))
+    end)
+
     assert {:ok, [%ExAws.ApiGateway.ApiKey{id: _} | _]} =
              ExAws.ApiGateway.get_apis_keys()
              |> ExAws.request(region: @region)
   end
 
-  # @tag :skip
-  test "#get_api_key" do
-    assert {:ok, %ExAws.ApiGateway.ApiKey{id: _}} =
-             ExAws.ApiGateway.get_api_key(@api_key)
+  test "#get_api_key", %{bypass: bypass} do
+    Bypass.expect_once(bypass, "GET", "/apikeys/#{@api_key}", fn conn ->
+      Plug.Conn.resp(conn, 200, File.read!("test/fixtures/get_api_key.json"))
+    end)
+
+    assert {:ok, %ExAws.ApiGateway.ApiKey{id: "m6jag7ci1m"}} =
+             ExAws.ApiGateway.get_api_key("m6jag7ci1m")
              |> ExAws.request(region: @region)
   end
 
-  @tag :skip
-  test "#get_usage_plans" do
+  test "#get_usage_plans", %{bypass: bypass} do
+    Bypass.expect_once(bypass, "GET", "/usageplans", fn conn ->
+      Plug.Conn.resp(conn, 200, File.read!("test/fixtures/get_usage_plans.json"))
+    end)
+
     assert {:ok, [%ExAws.ApiGateway.UsagePlan{id: _} | _]} =
              ExAws.ApiGateway.get_usage_plans()
              |> ExAws.request(region: @region)
   end
 
-  @tag :skip
-  test "#get_rest_apis" do
-    assert {:ok, %ExAws.ApiGateway.RestApi{id: _}} =
+  test "#get_rest_apis", %{bypass: bypass} do
+    Bypass.expect_once(bypass, "GET", "/restapis", fn conn ->
+      Plug.Conn.resp(conn, 200, File.read!("test/fixtures/get_rest_apis.json"))
+    end)
+
+    assert {:ok, %ExAws.ApiGateway.RestApi{id: "pywgcctwn2"}} =
              ExAws.ApiGateway.get_rest_apis()
              |> ExAws.request(region: @region)
   end

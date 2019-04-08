@@ -48,6 +48,7 @@ defmodule ExAws.ApiGateway.Mixfile do
       {:ex_doc, ">= 0.0.0", only: [:dev]},
       {:mix_test_watch, "~> 0.8", only: :dev, runtime: false},
       {:recase, "~> 0.4"},
+      {:bypass, "~> 1.0", only: :test},
       ex_aws()
     ]
   end

@@ -1,0 +1,75 @@
+{
+  "_links": {
+    "curies": [
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-apikey-{rel}.html",
+        "name": "apikey",
+        "templated": true
+      },
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-usageplan-{rel}.html",
+        "name": "usageplan",
+        "templated": true
+      }
+    ],
+    "self": { "href": "/apikeys" },
+    "apikey:by-key": {
+      "href": "/apikeys/{api_Key}{?includeValue}",
+      "templated": true
+    },
+    "apikey:create": { "href": "/apikeys" },
+    "apikey:delete": { "href": "/apikeys/{api_Key}", "templated": true },
+    "item": [
+      { "href": "/apikeys/be2egouzke" },
+      { "href": "/apikeys/q6l75edrm0" },
+      { "href": "/apikeys/b4yvl2mil2" },
+      { "href": "/apikeys/m6jag7ci1m" },
+      { "href": "/apikeys/7p3yywu3hg" },
+      { "href": "/apikeys/rxmb7q3jck" }
+    ]
+  },
+  "_embedded": {
+    "item": [
+      {
+        "_links": {
+          "self": { "href": "/apikeys/be2egouzke" },
+          "apikey:delete": { "href": "/apikeys/be2egouzke" },
+          "apikey:update": { "href": "/apikeys/be2egouzke" },
+          "apikey:usageplans": { "href": "/usageplans?keyId=be2egouzke" },
+          "usageplan:by-id": {
+            "href": "/usageplans/{usageplanId}",
+            "templated": true
+          }
+        },
+        "createdDate": "2019-03-20T23:51:23Z",
+        "description": "ddd",
+        "enabled": true,
+        "id": "be2egouzke",
+        "lastUpdatedDate": "2019-03-20T23:51:23Z",
+        "name": "ddd",
+        "stageKeys": [],
+        "value": "JHGK@JH$GKJ@G$JL@G$J@HGLG$L"
+      },
+      {
+        "_links": {
+          "self": { "href": "/apikeys/rxmb7q3jck" },
+          "apikey:delete": { "href": "/apikeys/rxmb7q3jck" },
+          "apikey:update": { "href": "/apikeys/rxmb7q3jck" },
+          "apikey:usageplans": { "href": "/usageplans?keyId=rxmb7q3jck" },
+          "usageplan:by-id": {
+            "href": "/usageplans/{usageplanId}",
+            "templated": true
+          }
+        },
+        "createdDate": "2019-03-21T09:06:09Z",
+        "customerId": "pwet",
+        "enabled": false,
+        "id": "rxmb7q3jck",
+        "lastUpdatedDate": "2019-03-21T09:06:09Z",
+        "name": "pwet",
+        "stageKeys": [],
+        "value": "JHGK@JH$GKJ@G$JL@G$J@HGLG$L"
+      }
+    ]
+  }
+}

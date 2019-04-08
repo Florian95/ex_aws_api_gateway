@@ -1,0 +1,164 @@
+{
+  "_links": {
+    "curies": [
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-authorizer-{rel}.html",
+        "name": "authorizer",
+        "templated": true
+      },
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-deployment-{rel}.html",
+        "name": "deployment",
+        "templated": true
+      },
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-documentationpart-{rel}.html",
+        "name": "documentationpart",
+        "templated": true
+      },
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-documentationversion-{rel}.html",
+        "name": "documentationversion",
+        "templated": true
+      },
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-gatewayresponse-{rel}.html",
+        "name": "gatewayresponse",
+        "templated": true
+      },
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-model-{rel}.html",
+        "name": "model",
+        "templated": true
+      },
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-requestvalidator-{rel}.html",
+        "name": "requestvalidator",
+        "templated": true
+      },
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-resource-{rel}.html",
+        "name": "resource",
+        "templated": true
+      },
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-restapi-{rel}.html",
+        "name": "restapi",
+        "templated": true
+      },
+      {
+        "href": "http://docs.aws.amazon.com/apigateway/latest/developerguide/restapi-stage-{rel}.html",
+        "name": "stage",
+        "templated": true
+      }
+    ],
+    "self": { "href": "/restapis" },
+    "item": { "href": "/restapis/pywgcctwn2" },
+    "restapi:by-id": { "href": "/restapis/{restapi_id}", "templated": true },
+    "restapi:create": { "href": "/restapis" },
+    "restapi:put": {
+      "href": "/restapis/{restapi_id}?failonwarnings=false{&mode}",
+      "templated": true
+    }
+  },
+  "_embedded": {
+    "item": {
+      "_links": {
+        "self": { "href": "/restapis/pywgcctwn2" },
+        "authorizer:by-id": {
+          "href": "/restapis/pywgcctwn2/authorizers/{authorizer_id}",
+          "templated": true
+        },
+        "authorizer:create": { "href": "/restapis/pywgcctwn2/authorizers" },
+        "deployment:by-id": {
+          "href": "/restapis/pywgcctwn2/deployments/{deployment_id}{?embed}",
+          "templated": true
+        },
+        "deployment:create": { "href": "/restapis/pywgcctwn2/deployments" },
+        "documentationpart:by-id": {
+          "href": "/restapis/pywgcctwn2/documentation/parts/{part_id}",
+          "templated": true
+        },
+        "documentationpart:create": {
+          "href": "/restapis/pywgcctwn2/documentation/parts"
+        },
+        "documentationpart:import": {
+          "href": "/restapis/pywgcctwn2/documentation/parts?failonwarnings=false{&mode}",
+          "templated": true
+        },
+        "documentationversion:by-version": {
+          "href": "/restapis/pywgcctwn2/documentation/versions/{doc_version}",
+          "templated": true
+        },
+        "documentationversion:create": {
+          "href": "/restapis/pywgcctwn2/documentation/versions"
+        },
+        "gatewayresponse:by-type": {
+          "href": "/restapis/pywgcctwn2/gatewayresponses/{response_type}",
+          "templated": true
+        },
+        "gatewayresponse:put": {
+          "href": "/restapis/pywgcctwn2/gatewayresponses/{response_type}",
+          "templated": true
+        },
+        "model:by-name": {
+          "href": "/restapis/pywgcctwn2/models/{model_name}?flatten=false",
+          "templated": true
+        },
+        "model:create": { "href": "/restapis/pywgcctwn2/models" },
+        "requestvalidator:by-id": {
+          "href": "/restapis/pywgcctwn2/requestvalidators/{requestvalidator_id}",
+          "templated": true
+        },
+        "requestvalidator:create": {
+          "href": "/restapis/pywgcctwn2/requestvalidators"
+        },
+        "resource:by-id": {
+          "href": "/restapis/pywgcctwn2/resources/{resource_id}{?embed}",
+          "templated": true
+        },
+        "resource:create": {
+          "href": "/restapis/pywgcctwn2/resources/q6pp0ooll9"
+        },
+        "restapi:authorizers": { "href": "/restapis/pywgcctwn2/authorizers" },
+        "restapi:delete": { "href": "/restapis/pywgcctwn2" },
+        "restapi:deployments": {
+          "href": "/restapis/pywgcctwn2/deployments{?limit}",
+          "templated": true
+        },
+        "restapi:documentation-parts": {
+          "href": "/restapis/pywgcctwn2/documentation/parts"
+        },
+        "restapi:documentation-versions": {
+          "href": "/restapis/pywgcctwn2/documentation/versions"
+        },
+        "restapi:gateway-responses": {
+          "href": "/restapis/pywgcctwn2/gatewayresponses"
+        },
+        "restapi:models": { "href": "/restapis/pywgcctwn2/models" },
+        "restapi:request-validators": {
+          "href": "/restapis/pywgcctwn2/requestvalidators"
+        },
+        "restapi:resources": {
+          "href": "/restapis/pywgcctwn2/resources{?limit,embed}",
+          "templated": true
+        },
+        "restapi:stages": {
+          "href": "/restapis/pywgcctwn2/stages{?deployment_id}",
+          "templated": true
+        },
+        "restapi:update": { "href": "/restapis/pywgcctwn2" },
+        "stage:by-name": {
+          "href": "/restapis/pywgcctwn2/stages/{stage_name}",
+          "templated": true
+        },
+        "stage:create": { "href": "/restapis/pywgcctwn2/stages" }
+      },
+      "apiKeySource": "HEADER",
+      "createdDate": "2019-01-28T23:51:17Z",
+      "endpointConfiguration": { "types": "EDGE", "ipv6": false },
+      "id": "pywgcctwn2",
+      "name": "my api"
+    }
+  }
+}
