@@ -9,7 +9,7 @@ Based on [Amazon API Gateway REST API Reference](https://docs.aws.amazon.com/api
 - [x] apigateway:rest-apis
 - [x] apigateway:usage-plans
 - [ ] apigateway:vpc-links
-- [ ] apikey:by-key
+- [x] apikey:by-key
 - [x] apikey:create
 - [ ] apikey:delete
 - [ ] apikey:import

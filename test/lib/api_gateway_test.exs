@@ -29,7 +29,7 @@ defmodule ExAws.ApiGatewayTest do
              |> ExAws.request(region: @region)
   end
 
-  # @tag :skip
+  @tag :skip
   test "#disassociate_usage_plan" do
     assert {:ok, nil} =
              ExAws.ApiGateway.disassociate_usage_plan(%{
@@ -50,6 +50,13 @@ defmodule ExAws.ApiGatewayTest do
   test "#get_apis_keys" do
     assert {:ok, [%ExAws.ApiGateway.ApiKey{id: _} | _]} =
              ExAws.ApiGateway.get_apis_keys()
+             |> ExAws.request(region: @region)
+  end
+
+  # @tag :skip
+  test "#get_api_key" do
+    assert {:ok, %ExAws.ApiGateway.ApiKey{id: _}} =
+             ExAws.ApiGateway.get_api_key(@api_key)
              |> ExAws.request(region: @region)
   end
 
