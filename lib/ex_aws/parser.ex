@@ -55,7 +55,7 @@ defmodule ExAws.ApiGateway.Parser do
 
   defp to_struct(%{} = map, method) do
     struct = @structs |> Map.fetch!(method)
-    [_ | keys] = Map.keys(struct)
+    keys = Map.keys(struct) |> Enum.reject(&(&1 == :__struct__))
 
     map
     |> Map.take(Enum.map(keys, &(Atom.to_string(&1) |> Recase.to_camel())))
